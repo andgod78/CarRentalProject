@@ -1,3 +1,5 @@
+package pl.com.carrental.model;
+
 import java.util.ArrayList;
 import java.util.List;
 
