@@ -6,16 +6,14 @@ public class Car {
     private String brand;
     private String model;
     private int productionYear;
-    private boolean isRented;
     private int meterStatus;
     private int gasoline;
 
-    public Car(int id, String brand, String model, int productionYear, boolean isRented, int meterStatus, int gasoline) {
+    public Car(int id, String brand, String model, int productionYear, int meterStatus, int gasoline) {
         this.id = id;
         this.brand = brand;
         this.model = model;
         this.productionYear = productionYear;
-        this.isRented = isRented;
         this.meterStatus = meterStatus;
         this.gasoline = gasoline;
     }
@@ -52,13 +50,6 @@ public class Car {
         this.productionYear = productionYear;
     }
 
-    public boolean isRented() {
-        return isRented;
-    }
-
-    public void setRented(boolean rented) {
-        isRented = rented;
-    }
 
     public int getMeterStatus() {
         return meterStatus;
@@ -83,7 +74,6 @@ public class Car {
                 ", brand='" + brand + '\'' +
                 ", model='" + model + '\'' +
                 ", productionYear=" + productionYear +
-                ", isRented=" + isRented +
                 ", meterStatus=" + meterStatus +
                 ", gasoline=" + gasoline +
                 '}';
