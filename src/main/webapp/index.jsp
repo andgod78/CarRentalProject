@@ -21,12 +21,12 @@
 </li>
 <%}%>
 </p>
-<form method="post" action="updated.jsp">
-    <input type="text" value="brand" onclick="value=''">
-    <input type="text" value="model" onclick="value=''">
-    <input type="text" value="productionYear" onclick="value=''">
-    <input type="text" value="meterStatus" onclick="value=''">
-    <input type="text" value="gasoline" onclick="value=''">
+<form method="post" action="updated">
+    <input type="text" name="brand" value="brand" onclick="value=''">
+    <input type="text" name="model" value="model" onclick="value=''">
+    <input type="text" name="productionYear" value="productionYear" onclick="value=''">
+    <input type="text" name="meterStatus" value="meterStatus" onclick="value=''">
+    <input type="text" name="gasoline" value="gasoline" onclick="value=''">
     <input type="submit" value="add" >
 </form>
 </body>

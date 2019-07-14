@@ -28,10 +28,8 @@ public class AddCar extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        if (req.getServletContext().getAttribute("car") == null) {
-            req.getServletContext().setAttribute("car", CarRental.createCars());
 
-            int id = Integer.parseInt(req.getParameter("id"));
+           // int id = Integer.parseInt(req.getParameter("id"));
             String brand = req.getParameter("brand");
             String model = req.getParameter("model");
             int productionYear = Integer.parseInt(req.getParameter("productionYear"));
@@ -39,7 +37,7 @@ public class AddCar extends HttpServlet {
             int gasoline = Integer.parseInt(req.getParameter("gasoline"));
 
 
-            Car newCar = new Car(id, brand, model, productionYear, meterStatus, gasoline);
+            Car newCar = new Car(-1, brand, model, productionYear, meterStatus, gasoline);
 
             EntityTransaction trx = mgr.getTransaction();
             trx.begin();
@@ -55,7 +53,5 @@ public class AddCar extends HttpServlet {
 
             RequestDispatcher requestDispatcher = req.getRequestDispatcher("index.jsp");
             requestDispatcher.forward(req, resp);
-
-        }
     }
 }

@@ -17,7 +17,7 @@ public class Car {
     private int gasoline;
 
     public Car(int id, String brand, String model, int productionYear, int meterStatus, int gasoline) {
-        this.id = id;
+//        this.id = id;
         this.brand = brand;
         this.model = model;
         this.productionYear = productionYear;
