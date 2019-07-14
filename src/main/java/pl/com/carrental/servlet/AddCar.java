@@ -49,9 +49,6 @@ public class AddCar extends HttpServlet {
             carList.add(newCar);
 
             req.getServletContext().setAttribute("car", carList);
-
-
-            RequestDispatcher requestDispatcher = req.getRequestDispatcher("index.jsp");
-            requestDispatcher.forward(req, resp);
+            resp.sendRedirect("index.jsp");
     }
 }
