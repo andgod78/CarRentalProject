@@ -1,4 +1,39 @@
 package pl.com.carrental.servlet;
 
-public class DeleteCar {
+import pl.com.carrental.model.Car;
+import pl.com.carrental.model.CarRental;
+
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
+import java.util.List;
+
+public class DeleteCar extends HttpServlet {
+    @Override
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        if (req.getServletContext().getAttribute("car") == null) {
+            req.getServletContext().setAttribute("car", CarRental.createCars());
+        }
+        RequestDispatcher requestDispatcher = req.getRequestDispatcher("index2.jsp");
+        requestDispatcher.forward(req, resp);
+    }
+
+    @Override
+    protected void doDelete(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        if (req.getServletContext().getAttribute("car") != null) {
+            req.getServletContext().setAttribute("car", CarRental.createCars());
+
+            int idOfCarToDelete = Integer.parseInt(req.getParameter("id"));
+
+            List<Car> carList = (List<Car>) req.getServletContext().getAttribute("car");
+            for (Car car : carList) {
+                if (car.getId() == idOfCarToDelete) {
+                    carList.remove(car);
+                }
+            }
+        }
+    }
 }

@@ -18,6 +18,9 @@ public class Car {
         this.gasoline = gasoline;
     }
 
+    public Car(int id) {
+    }
+
     public int getId() {
         return id;
     }
