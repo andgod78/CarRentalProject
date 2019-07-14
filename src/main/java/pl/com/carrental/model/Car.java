@@ -1,8 +1,15 @@
 package pl.com.carrental.model;
 
+import javax.persistence.*;
 
+
+@Entity
 public class Car {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
+
     private String brand;
     private String model;
     private int productionYear;
@@ -19,6 +26,9 @@ public class Car {
     }
 
     public Car(int id) {
+    }
+
+    public Car() {
     }
 
     public int getId() {
