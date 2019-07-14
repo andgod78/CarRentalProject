@@ -43,7 +43,7 @@ public class AddCar extends HttpServlet {
 
 
 
-            RequestDispatcher requestDispatcher = req.getRequestDispatcher("index.jsp");
+            RequestDispatcher requestDispatcher = req.getRequestDispatcher("updated.jsp");
             requestDispatcher.forward(req,resp);
 
         }

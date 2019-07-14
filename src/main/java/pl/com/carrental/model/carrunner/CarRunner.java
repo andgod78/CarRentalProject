@@ -1,3 +1,4 @@
+/*
 package pl.com.carrental.model.carrunner;
 
 import javax.persistence.*;
@@ -37,9 +38,11 @@ public class CarRunner {
         closeProgram(entityManager, entityManagerFactory);
 
 
-        /*entityManager.close();
+        */
+/*entityManager.close();
         entityManagerFactory.close();
-        System.exit(0);*/
+        System.exit(0);*//*
+
 
     }
 
@@ -134,3 +137,4 @@ public class CarRunner {
     }
 }
 }
+*/

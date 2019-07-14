@@ -5,7 +5,6 @@
   Time: 12:35
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page import="pl.com.carrental.servlet" %>
 <%@ page import="java.util.List" %>
 <%@ page import="pl.com.carrental.model.Car" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
@@ -22,7 +21,7 @@
 </li>
 <%}%>
 </p>
-<form method="post" action="add">
+<form method="post" action="updated.jsp">
     <input type="text" value="brand" onclick="value=''">
     <input type="text" value="model" onclick="value=''">
     <input type="text" value="productionYear" onclick="value=''">

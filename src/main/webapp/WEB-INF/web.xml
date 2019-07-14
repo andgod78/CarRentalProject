@@ -9,7 +9,15 @@
 </servlet>
     <servlet-mapping>
         <servlet-name>AddCar</servlet-name>
-        <url-pattern>/add</url-pattern>
+        <url-pattern>/updated</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>CarServlet</servlet-name>
+        <servlet-class>pl.com.carrental.servlet.CarServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CarServlet</servlet-name>
+        <url-pattern>/car</url-pattern>
     </servlet-mapping>
     <servlet>
         <servlet-name>DeleteCar</servlet-name>
