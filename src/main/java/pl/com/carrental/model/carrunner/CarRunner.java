@@ -1,12 +1,11 @@
-/*
 package pl.com.carrental.model.carrunner;
 
 import javax.persistence.*;
-import java.util.List;
 
 public class CarRunner {
-    public static void main(String[] args) {
 
+    public static EntityManager getManager()
+    {
 
         EntityManagerFactory entityManagerFactory =
                 Persistence.createEntityManagerFactory("mySQL");
@@ -15,10 +14,10 @@ public class CarRunner {
 
         System.out.println("Is ok: " + entityManager.isOpen());
 
-        EntityTransaction tx = entityManager.getTransaction();
+        return entityManager;
 
-        tx.begin();
-        //findAllVehicales(entityManager);
+        /*tx.begin();
+        new AddCar(entityManager);
         tx.commit();
         tx.begin();
         //addOwner(entityManager);
@@ -38,11 +37,9 @@ public class CarRunner {
         closeProgram(entityManager, entityManagerFactory);
 
 
-        */
-/*entityManager.close();
+        *//*entityManager.close();
         entityManagerFactory.close();
         System.exit(0);*//*
-
 
     }
 
@@ -135,6 +132,5 @@ public class CarRunner {
         List results = query.getResultList();
         System.out.println(results);
     }
-}
-}
-*/
+}*/
+}}
