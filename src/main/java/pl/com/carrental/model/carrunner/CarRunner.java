@@ -15,7 +15,7 @@ public class CarRunner {
             EntityManager entityManager1 =
                     entityManagerFactory.createEntityManager();
 
-            System.out.println("Is ok: " + entityManager.isOpen());
+            System.out.println("Is ok: " + entityManager1.isOpen());
 
             return entityManager1;
         }
