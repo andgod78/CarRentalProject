@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-public class DeleteCar extends HttpServlet {
+public class DeleteCarServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         if (req.getServletContext().getAttribute("car") == null) {
@@ -24,9 +24,8 @@ public class DeleteCar extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         if (req.getServletContext().getAttribute("car") != null) {
-            req.getServletContext().setAttribute("car", CarRental.createCars());
 
-            int idOfCarToDelete = Integer.parseInt(req.getParameter("id"));
+            int idOfCarToDelete = Integer.parseInt(req.getParameter("car_id"));
 
             List<Car> carList = (List<Car>) req.getServletContext().getAttribute("car");
             for (Car car : carList) {
@@ -34,6 +33,9 @@ public class DeleteCar extends HttpServlet {
                     carList.remove(car);
                 }
             }
+            req.getServletContext().setAttribute("car", carList);
+            resp.sendRedirect("index2.jsp");
+
         }
     }
 }

@@ -5,7 +5,7 @@
          version="4.0">
 <servlet>
     <servlet-name>AddCar</servlet-name>
-    <servlet-class>pl.com.carrental.servlet.AddCar</servlet-class>
+    <servlet-class>pl.com.carrental.servlet.AddCarServlet</servlet-class>
 </servlet>
     <servlet-mapping>
         <servlet-name>AddCar</servlet-name>
@@ -21,7 +21,7 @@
     </servlet-mapping>
     <servlet>
         <servlet-name>DeleteCar</servlet-name>
-        <servlet-class>pl.com.carrental.servlet.DeleteCar</servlet-class>
+        <servlet-class>pl.com.carrental.servlet.DeleteCarServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>DeleteCar</servlet-name>
@@ -29,7 +29,7 @@
     </servlet-mapping>
     <servlet>
         <servlet-name>RentCar</servlet-name>
-        <servlet-class>pl.com.carrental.servlet.RentCar</servlet-class>
+        <servlet-class>pl.com.carrental.servlet.RentCarServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>RentCar</servlet-name>
@@ -37,7 +37,7 @@
     </servlet-mapping>
     <servlet>
         <servlet-name>ReturnCar</servlet-name>
-        <servlet-class>pl.com.carrental.servlet.ReturnCar</servlet-class>
+        <servlet-class>pl.com.carrental.servlet.ReturnCarServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>ReturnCar</servlet-name>
@@ -45,7 +45,7 @@
     </servlet-mapping>
     <servlet>
         <servlet-name>ReserveCar</servlet-name>
-        <servlet-class>pl.com.carrental.servlet.ReserveCar</servlet-class>
+        <servlet-class>pl.com.carrental.servlet.ReserveCarServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>ReserveCar</servlet-name>

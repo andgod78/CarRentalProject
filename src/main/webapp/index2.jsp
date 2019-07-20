@@ -7,24 +7,16 @@
     List<Car> cars = (List<Car>) application.getAttribute("car");
 %>
 <p>
-    <%--<%= greet %>--%>
         <%
         for (Car c: cars) {%>
 <li><%=c%>
 </li>
     <%}%>
 
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<html>
-<head>
-    <title>Title</title>
-</head>
-<body>
-
-<form method="post" action="updated">
+<form method="post" action="delete">
     <input type="text" name="car_id" value="car_id" onclick="this.value=''">
     <input type="submit" name="delete" value="Delete">
-</form>
+    </form>
 
 </body>
 </html>

@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-public class AddCar extends HttpServlet {
+public class AddCarServlet extends HttpServlet {
 
     private EntityManager mgr = CarRunner.getManager();
 

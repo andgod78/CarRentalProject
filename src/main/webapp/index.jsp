@@ -29,6 +29,7 @@
     <input type="text" name="gasoline" value="gasoline" onclick="value=''">
     <input type="submit" value="add" >
 </form>
+
 </body>
 </html>
 
