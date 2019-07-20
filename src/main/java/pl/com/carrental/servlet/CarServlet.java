@@ -1,6 +1,6 @@
 package pl.com.carrental.servlet;
 
-import pl.com.carrental.model.CarRental;
+import pl.com.carrental.implementation.CarDaoImpl;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -16,10 +16,8 @@ public class CarServlet extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        if (request.getServletContext().getAttribute("car") == null) {
-            request.getServletContext().setAttribute("car", CarRental.createCars());
-        }
 
+        request.setAttribute("carList", CarDaoImpl.getInstance().findAllCars());
         RequestDispatcher requestDispatcher = request.getRequestDispatcher("index.jsp");
         requestDispatcher.forward(request, response);
     }

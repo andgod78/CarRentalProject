@@ -9,7 +9,7 @@
 </servlet>
     <servlet-mapping>
         <servlet-name>AddCar</servlet-name>
-        <url-pattern>/updated</url-pattern>
+        <url-pattern>/addcar</url-pattern>
     </servlet-mapping>
     <servlet>
         <servlet-name>CarServlet</servlet-name>

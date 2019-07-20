@@ -31,6 +31,11 @@
         <log.path>/data/logs/</log.path>
     </properties>
     <dependencies>
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>jstl</artifactId>
+            <version>1.2</version>
+        </dependency>
         <!-- Logger Impl -->
         <!-- <dependency>
             <groupId>org.slf4j</groupId>

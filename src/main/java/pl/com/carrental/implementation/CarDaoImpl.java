@@ -34,7 +34,8 @@ public class CarDaoImpl implements CarDao {
     public void deleteCar(Integer id) {
         EntityTransaction trx = this.mgr.getTransaction();
         trx.begin();
-        mgr.remove(id);
+        final Car car = mgr.find(Car.class,id);
+        mgr.remove(car);
         trx.commit();
     }
 
