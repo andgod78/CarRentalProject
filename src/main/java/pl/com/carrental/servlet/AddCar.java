@@ -29,26 +29,33 @@ public class AddCar extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-           // int id = Integer.parseInt(req.getParameter("id"));
-            String brand = req.getParameter("brand");
-            String model = req.getParameter("model");
-            int productionYear = Integer.parseInt(req.getParameter("productionYear"));
-            int meterStatus = Integer.parseInt(req.getParameter("meterStatus"));
-            int gasoline = Integer.parseInt(req.getParameter("gasoline"));
+        // int id = Integer.parseInt(req.getParameter("id"));
+        String brand = req.getParameter("brand");
+        String model = req.getParameter("model");
+        int productionYear = Integer.parseInt(req.getParameter("productionYear"));
+        int meterStatus = Integer.parseInt(req.getParameter("meterStatus"));
+        int gasoline = Integer.parseInt(req.getParameter("gasoline"));
 
 
-            Car newCar = new Car(-1, brand, model, productionYear, meterStatus, gasoline);
+        Car newCar = new Car(-1, brand, model, productionYear, meterStatus, gasoline);
 
-            EntityTransaction trx = mgr.getTransaction();
-            trx.begin();
-            mgr.persist(newCar);
-            trx.commit();
+        EntityTransaction trx = mgr.getTransaction();
+        trx.begin();
+        mgr.persist(newCar);
+        trx.commit();
 
 
-            List<Car> carList = (List<Car>) req.getServletContext().getAttribute("car");
-            carList.add(newCar);
 
-            req.getServletContext().setAttribute("car", carList);
-            resp.sendRedirect("index.jsp");
+        List<Car> carList = (List<Car>) req.getServletContext().getAttribute("car");
+        carList.add(newCar);
+
+        req.getServletContext().setAttribute("car", carList);
+        resp.sendRedirect("index.jsp");
+
+
     }
+
+
+
+
 }

@@ -4,9 +4,9 @@
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
         <properties>
             <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/rentcarproject?serverTimezone=Europe/Warsaw"/>
-            <property name="javax.persistence.jdbc.user" value="rentcaradmin"/>
+            <property name="javax.persistence.jdbc.user" value="root"/>
             <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
-            <property name="javax.persistence.jdbc.password" value="abcd#1234"/>
+            <property name="javax.persistence.jdbc.password" value="7123barcelona"/>
             <property name="hibernate.cache.provider_class" value="org.hibernate.cache.internal.NoCachingRegionFactory"/>
             <property name="hibernate.dialect" value="org.hibernate.dialect.MySQL8Dialect"/>
             <property name="hibernate.hbm2ddl.auto" value="update"/>

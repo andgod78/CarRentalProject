@@ -22,7 +22,7 @@ public class DeleteCar extends HttpServlet {
     }
 
     @Override
-    protected void doDelete(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         if (req.getServletContext().getAttribute("car") != null) {
             req.getServletContext().setAttribute("car", CarRental.createCars());
 
