@@ -14,38 +14,31 @@
 <html>
 <body>
 <h2>Car Rental</h2>
-
-<%
-
-    //List<Car> list =  CarDaoImpl.getInstance().findAllCars();
-
-%>
 <p>
+    <table>
+        <c:forEach items="${carList}" var="car">
+                <tr>
+                    <td>${car.id}</td>
+                    <td>${car.brand}</td>
+                    <td>${car.model}</td>
+                    <td>${car.productionYear}</td>
+                    <td>${car.meterStatus}</td>
+                    <td>${car.gasoline}</td>
 
-            <c:forEach items="${'${'}carList}" var="car">
-            <tr>
-                <td>${'${'}car.id}</td>
-                <td>${'${'}car.brand}</td>
-                <td>${'${'}car.model}</td>
-                <td>${'${'}car.productionYear}</td>
-                <td>${'${'}car.meterStatus}</td>
-                <td>${'${'}car.gasoline}</td>
-
-                <%--<td>
-                    <form action="<c:url value="/customer/update"/>" method="post">
-                        <input type="hidden" name="custId" value="${'${'}customer.id}">
-                        <input type="submit" value="Update">
-                    </form>
-                <td>
-                    <form action="<c:url value="/customer/delete"/>" method="post">
-                        <input type="hidden" name="custId" value="${'${'}customer.id}">
-                        <input style="background: #F00;" type="submit" value="Delete">
-                    </form>
-                </td>--%>
-            </tr>
-            </c:forEach>
-
-<%%>
+                    <%--<td>
+                        <form action="<c:url value="/customer/update"/>" method="post">
+                            <input type="hidden" name="custId" value="${'${'}customer.id}">
+                            <input type="submit" value="Update">
+                        </form>
+                    <td>
+                        <form action="<c:url value="/customer/delete"/>" method="post">
+                            <input type="hidden" name="custId" value="${'${'}customer.id}">
+                            <input style="background: #F00;" type="submit" value="Delete">
+                        </form>
+                    </td>--%>
+                </tr>
+                </c:forEach>
+    </table>
 </p>
 <form method="post" action="addcar">
     <input type="text" name="brand" value="brand" onclick="value=''">

@@ -11,13 +11,8 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-
-public class CarServlet extends HttpServlet {
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-    }
-
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+public class MainServlet extends HttpServlet {
+      protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         List<Car> carList = CarDaoImpl.getInstance().findAllCars();
         request.setAttribute("carList",carList);
@@ -25,5 +20,3 @@ public class CarServlet extends HttpServlet {
         requestDispatcher.forward(request, response);
     }
 }
-
-
