@@ -3,10 +3,10 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
          version="4.0">
-<servlet>
-    <servlet-name>AddCar</servlet-name>
-    <servlet-class>pl.com.carrental.servlet.AddCarServlet</servlet-class>
-</servlet>
+    <servlet>
+        <servlet-name>AddCar</servlet-name>
+        <servlet-class>pl.com.carrental.servlet.AddCarServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>AddCar</servlet-name>
         <url-pattern>/addcar</url-pattern>
@@ -28,12 +28,20 @@
         <url-pattern>/car</url-pattern>
     </servlet-mapping>
     <servlet>
-        <servlet-name>DeleteCar</servlet-name>
+        <servlet-name>DeleteCarServlet</servlet-name>
         <servlet-class>pl.com.carrental.servlet.DeleteCarServlet</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>DeleteCar</servlet-name>
+        <servlet-name>DeleteCarServlet</servlet-name>
         <url-pattern>/delete</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>ModifyCarServlet</servlet-name>
+        <servlet-class>pl.com.carrental.servlet.ModifyCarServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ModifyCarServlet</servlet-name>
+        <url-pattern>/modify</url-pattern>
     </servlet-mapping>
     <servlet>
         <servlet-name>RentCar</servlet-name>
@@ -62,4 +70,59 @@
     <welcome-file-list>
         <welcome-file>index.jsp</welcome-file>
     </welcome-file-list>
+
+
+    <security-role>
+        <role-name>ADMIN</role-name>
+    </security-role>
+    <security-role>
+        <role-name>USER</role-name>
+    </security-role>
+    <security-role>
+        <role-name>EMPLOYEE</role-name>
+    </security-role>
+
+    <security-constraint>
+        <web-resource-collection>
+            <web-resource-name>Admin Protected Area</web-resource-name>
+            <url-pattern>/add</url-pattern>
+            <url-pattern>/delete</url-pattern>
+            <url-pattern>/modify</url-pattern>
+        </web-resource-collection>
+        <auth-constraint>
+            <role-name>ADMIN</role-name>
+        </auth-constraint>
+    </security-constraint>
+
+    <security-constraint>
+        <web-resource-collection>
+            <web-resource-name>User Protected Area</web-resource-name>
+            <url-pattern>/car</url-pattern>
+            <url-pattern>/rent</url-pattern>
+        </web-resource-collection>
+        <auth-constraint>
+            <role-name>ADMIN</role-name>
+            <role-name>EMPLOYEE</role-name>
+        </auth-constraint>
+    </security-constraint>
+
+    <security-constraint>
+        <web-resource-collection>
+            <web-resource-name>User Protected Area</web-resource-name>
+            <url-pattern>/car</url-pattern>
+            <url-pattern>/reserve</url-pattern>
+            <url-pattern>/return</url-pattern>
+        </web-resource-collection>
+        <auth-constraint>
+            <role-name>ADMIN</role-name>
+            <role-name>USER</role-name>
+        </auth-constraint>
+    </security-constraint>
+
+
+    <login-config>
+        <auth-method>BASIC</auth-method>
+        <realm-name>Editor Login</realm-name>
+    </login-config>
+
 </web-app>

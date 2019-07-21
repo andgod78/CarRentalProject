@@ -40,6 +40,9 @@
                 </c:forEach>
     </table>
 </p>
+<%
+    if (request.isUserInRole("ADMIN")) {%>
+
 <form method="post" action="addcar">
     <input type="text" name="brand" value="brand" onclick="value=''">
     <input type="text" name="model" value="model" onclick="value=''">
@@ -52,7 +55,7 @@
     <input type="text" name="car_id" value="car_id" onclick="this.value=''">
     <input type="submit" name="delete" value="Delete">
 </form>
-
+<%}%>
 </body>
 </html>
 
